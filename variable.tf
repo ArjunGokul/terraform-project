@@ -10,3 +10,6 @@ type = string
 variable "is_create" {
 type = bool
 }
+variable "cnt" {
+type = number
+}
