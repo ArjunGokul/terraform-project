@@ -7,3 +7,6 @@ type = string
 variable "ami" {
 type = string
 }
+variable "is_create" {
+type = bool
+}
