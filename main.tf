@@ -24,6 +24,7 @@ data "aws_vpc" "default-vpc" {
 resource "aws_instance" "nginx-server" {
   instance_type = var.instance_type
   key_name = aws_key_pair.my-keypair.key_name
+  count = var.is_create ? var.cnt : 0
   ami = var.ami
   tags = {
    Name = "nginx-server-01"
