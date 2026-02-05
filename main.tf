@@ -22,14 +22,12 @@ data "aws_vpc" "default-vpc" {
 }
 
 data "aws_ami" "my-ami" {
-  executable_users = ["self"]
   most_recent      = true
-  name_regex       = "^myami-[0-9]{3}"
   owners           = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["ubuntu-*-24.04-*-amd64*"]
+    values = ["*ubuntu-*24.04*-amd64-server-*"]
   }
 
   filter {
