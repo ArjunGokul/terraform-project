@@ -21,11 +21,28 @@ data "aws_vpc" "default-vpc" {
   id = "vpc-0ce30347b3cd6bab8"
 }
 
+data "aws_ami" "my-ami" {
+  executable_users = ["self"]
+  most_recent      = true
+  name_regex       = "^myami-[0-9]{3}"
+  owners           = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["ubuntu-*-24.04-*-amd64*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
 resource "aws_instance" "nginx-server" {
   instance_type = var.instance_type
   key_name = aws_key_pair.my-keypair.key_name
   count = var.is_create ? var.cnt : 0
-  ami = var.ami
+  ami = data.aws_ami.my-ami.id
   tags = {
    Name = "nginx-server-01"
   }
