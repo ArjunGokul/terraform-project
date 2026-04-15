@@ -1,0 +1,31 @@
+Unable to find image 'artifactorycn.netcracker.com:17084/platform-jenkins/jenkins-slave-assembly-release-2.440.1-7:build79' locally
+build79: Pulling from platform-jenkins/jenkins-slave-assembly-release-2.440.1-7
+1a3c686cbe25: Pulling fs layer
+7c1ad604b9be: Pulling fs layer
+28e8e863f695: Pulling fs layer
+aa1db6015823: Pulling fs layer
+ddec945330ce: Pulling fs layer
+aa1db6015823: Waiting
+ddec945330ce: Waiting
+28e8e863f695: Download complete
+7c1ad604b9be: Verifying Checksum
+7c1ad604b9be: Download complete
+aa1db6015823: Verifying Checksum
+aa1db6015823: Download complete
+ddec945330ce: Verifying Checksum
+ddec945330ce: Download complete
+1a3c686cbe25: Retrying in 5 seconds
+1a3c686cbe25: Retrying in 4 seconds
+1a3c686cbe25: Retrying in 3 seconds
+1a3c686cbe25: Retrying in 2 seconds
+1a3c686cbe25: Retrying in 1 second
+1a3c686cbe25: Verifying Checksum
+1a3c686cbe25: Download complete
+1a3c686cbe25: Pull complete
+7c1ad604b9be: Pull complete
+28e8e863f695: Pull complete
+aa1db6015823: Pull complete
+ddec945330ce: Pull complete
+Digest: sha256:f8799d3fee9f09d75e9ddec080b8d98749c19931d4850df6f6b5e69e5680d05a
+Status: Downloaded newer image for artifactorycn.netcracker.com:17084/platform-jenkins/jenkins-slave-assembly-release-2.440.1-7:build79
+a5a8ff7f40065f0474c632429faf5c12a0fbf26087139628c744e856f5688d6f

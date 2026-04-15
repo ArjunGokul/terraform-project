@@ -1,0 +1,75 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.3",
+  "serial": 1,
+  "lineage": "7b7c0d1b-11fb-937b-d024-cb6f4d0bc52c",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "my-sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:ap-south-1:014330287552:security-group/sg-086c9f8ce2b6e423b",
+            "description": "default VPC security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-086c9f8ce2b6e423b",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": true,
+                "to_port": 0
+              }
+            ],
+            "name": "default",
+            "name_prefix": "",
+            "owner_id": "014330287552",
+            "region": "ap-south-1",
+            "revoke_rules_on_delete": null,
+            "tags": {
+              "Name": "default-sg"
+            },
+            "tags_all": {
+              "Name": "default-sg"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03f5f86284d6bd9bb"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "014330287552",
+            "id": "sg-086c9f8ce2b6e423b",
+            "region": "ap-south-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
