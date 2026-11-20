@@ -16,7 +16,21 @@ resource "azurerm_linux_virtual_machine" "my-vm" {
     storage_account_type = "Standard_LRS"
     disk_size_gb         = var.os_disk_size
   }
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update",
+      "sudo apt-get install -y nginx",
+      "echo '<h1>Welcome to ${each.value}</h1>' | sudo tee /var/www/html/index.html",
+      "sudo systemctl restart nginx"
+    ]
 
+    connection {
+      type        = "ssh"
+      host        = azurerm_linux_virtual_machine.my-vm[each.key].public_ip_address
+      user        = var.admin_username
+      password    = var.admin_password
+    }
+  }
 
   source_image_reference {
     publisher = "Canonical"
