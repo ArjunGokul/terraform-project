@@ -3,6 +3,7 @@ variable "resource_group_location" {}
 variable "storage_account_name" {}
 variable "vnet_address_space" {}
 variable "vnet_name" {}
+variable "disk_size_gb" {}
 variable "subnet_name_address" {
   type = map(string)
 }

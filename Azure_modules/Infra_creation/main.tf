@@ -37,6 +37,7 @@ module "compute" {
   resource_group_location = module.resource_group.location
   os_disk_size            = var.os_disk_size
   subnet_ids              = local.vm_subnet_map
+  disk_size_gb            = var.disk_size_gb
 }
 
 module "load_balancer" {

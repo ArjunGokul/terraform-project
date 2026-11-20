@@ -44,3 +44,8 @@ variable "subnet_ids" {
   type        = map(string)
   description = "Map of VM names to subnet IDs."
 }
+
+variable "disk_size_gb" {
+  type        = number
+  description = "The size of the managed disk in GB."
+}
