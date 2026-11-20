@@ -8,7 +8,6 @@ resource "azurerm_network_interface" "my-nic" {
     name                          = "internal"
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = var.subnet_ids[each.value]
-    public_ip_address_id          = azurerm_public_ip.my-public-ip[each.key].id
   }
 
   tags = merge(local.common_tags, {
@@ -45,16 +44,4 @@ resource "azurerm_network_interface_security_group_association" "my-nic-nsg-asso
   for_each                  = toset(var.vm_name)
   network_interface_id      = azurerm_network_interface.my-nic[each.key].id
   network_security_group_id = azurerm_network_security_group.my-nsg.id
-}
-
-resource "azurerm_public_ip" "my-public-ip" {
-  for_each            = toset(var.vm_name)
-  name                = "${each.value}-public-ip"
-  location            = var.resource_group_location
-  resource_group_name = var.resource_group_name
-  allocation_method   = "Static"
-
-  tags = merge(local.common_tags, {
-    Name = "${each.value}-public-ip"
-  })
 }

@@ -17,19 +17,6 @@ resource "azurerm_linux_virtual_machine" "my-vm" {
     disk_size_gb         = var.os_disk_size
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update -y",
-      "sudo apt-get install -y nginx",
-    ]
-  }
-
-  connection {
-    type     = "ssh"
-    host     = azurerm_public_ip.my-public-ip[each.key].ip_address
-    user     = var.admin_username
-    password = var.admin_password
-  }
 
   source_image_reference {
     publisher = "Canonical"

@@ -21,10 +21,18 @@ output "subnet_ids" {
   value = module.vpc.subnet_ids
 }
 
-output "public_ip" {
-  value = module.compute.public_ip
+output "private_ip" {
+  value = module.compute.private_ip
 }
 
 output "network_interface_id" {
   value = module.compute.network_interface_id
+}
+
+output "lb_public_ip" {
+  value = module.load_balancer.lb_public_ip
+}
+
+output "ssh_endpoints" {
+  value = module.load_balancer.ssh_endpoints
 }
