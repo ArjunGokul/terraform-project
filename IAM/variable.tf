@@ -3,11 +3,11 @@ variable "region" {
 }
 
 variable "IAMPolicy" {
-  type = list(string)
+  type    = list(string)
   default = ["Billing", "AWSBillingConductorFullAccess", "IAMUserChangePassword"]
 }
 
 variable "create_users" {
- type = list(string)
+  type    = list(string)
   default = ["arjun", "sushma", "gokul"]
 }

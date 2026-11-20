@@ -6,8 +6,8 @@ module "vpc" {
 }
 
 module "aws-key-pair" {
-  source              = "../modules/tls-keypair"
-  region              = var.region
+  source = "../modules/tls-keypair"
+  region = var.region
 }
 
 module "ec2" {

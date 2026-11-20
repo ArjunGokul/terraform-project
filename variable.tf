@@ -1,13 +1,13 @@
 variable "region" {
- type = string
+  type = string
 }
 variable "instance_type" {
-type = string
+  type = string
 }
 
 variable "is_create" {
-type = bool
+  type = bool
 }
 variable "cnt" {
-type = number
+  type = number
 }

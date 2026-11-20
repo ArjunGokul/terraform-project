@@ -148,7 +148,7 @@ resource "aws_lb_target_group" "demo-tg" {
 }
 
 resource "aws_lb_target_group_attachment" "attach-alb" {
-  for_each = var.create_lb ? aws_instance.my-ec2 : {}
+  for_each         = var.create_lb ? aws_instance.my-ec2 : {}
   target_group_arn = aws_lb_target_group.demo-tg[0].arn
   target_id        = each.value.id
   port             = 80

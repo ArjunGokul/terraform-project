@@ -22,8 +22,8 @@ data "aws_vpc" "default-vpc" {
 }
 
 data "aws_ami" "my-ami" {
-  most_recent      = true
-  owners           = ["amazon"]
+  most_recent = true
+  owners      = ["amazon"]
 
   filter {
     name   = "name"
@@ -38,10 +38,10 @@ data "aws_ami" "my-ami" {
 
 resource "aws_instance" "nginx-server" {
   instance_type = var.instance_type
-  key_name = aws_key_pair.my-keypair.key_name
-  count = var.is_create ? var.cnt : 0
-  ami = data.aws_ami.my-ami.id
+  key_name      = aws_key_pair.my-keypair.key_name
+  count         = var.is_create ? var.cnt : 0
+  ami           = data.aws_ami.my-ami.id
   tags = {
-   Name = "nginx-server-01"
+    Name = "nginx-server-01"
   }
 }

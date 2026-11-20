@@ -25,10 +25,10 @@ resource "azurerm_linux_virtual_machine" "my-vm" {
   }
 
   connection {
-    type        = "ssh"
-    host        = azurerm_public_ip.my-public-ip[each.key].ip_address
-    user        = var.admin_username
-    password    = var.admin_password
+    type     = "ssh"
+    host     = azurerm_public_ip.my-public-ip[each.key].ip_address
+    user     = var.admin_username
+    password = var.admin_password
   }
 
   source_image_reference {

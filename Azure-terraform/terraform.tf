@@ -7,9 +7,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name = "central-india-rg"
+    resource_group_name  = "central-india-rg"
     storage_account_name = "terraformremotestate"
-    container_name       = "tfstate"  
+    container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }
 }

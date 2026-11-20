@@ -1,5 +1,5 @@
 module "aws-key-pair" {
-  source              = "../../modules/tls-keypair"
-  region              = "ap-south-1"
+  source = "../../modules/tls-keypair"
+  region = "ap-south-1"
 }
 

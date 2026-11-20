@@ -1,8 +1,8 @@
 locals {
-   tags = {
+  tags = {
     Project = "Terraform"
-    Owner = "Nagarjuna SG"
-   }
+    Owner   = "Nagarjuna SG"
+  }
 }
 resource "tls_private_key" "my-key" {
   algorithm = "RSA"
@@ -24,5 +24,5 @@ resource "aws_key_pair" "my-keypair" {
 }
 
 output "aws_keypair_name" {
-  value = aws_key_pair.my-keypair.key_name 
+  value = aws_key_pair.my-keypair.key_name
 }

@@ -2,14 +2,14 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 resource "aws_elb" "my-alb" {
-  name = "my-alb"
+  name               = "my-alb"
   availability_zones = data.aws_availability_zones.available.names[*]
-  instances = var.aws_instance[*]
+  instances          = var.aws_instance[*]
   listener {
-    instance_port      = 80
-    instance_protocol  = "http"
-    lb_port            = 80
-    lb_protocol        = "http"
+    instance_port     = 80
+    instance_protocol = "http"
+    lb_port           = 80
+    lb_protocol       = "http"
   }
   health_check {
     healthy_threshold   = 2

@@ -41,6 +41,6 @@ variable "inbound_port" {
 }
 
 variable "subnet_ids" {
-  type = map(string)
+  type        = map(string)
   description = "Map of VM names to subnet IDs."
 }
