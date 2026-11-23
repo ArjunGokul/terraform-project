@@ -4,6 +4,17 @@ module "resource_group" {
   resource_group_location = var.resource_group_location
 }
 
+module "aks_cluster" {
+  source                  = "../modules/AKS-Cluster"
+  aks_cluster_name        = var.aks_cluster_name
+  resource_group_name     = module.resource_group.name
+  resource_group_location = module.resource_group.location
+  dns_prefix              = var.dns_prefix
+  node_count              = var.node_count
+  vm_size                 = var.vm_size
+  additional_node_pools   = var.additional_node_pools
+}
+
 module "storage_account" {
   source                  = "../modules/storage_account"
   storage_account_name    = var.storage_account_name

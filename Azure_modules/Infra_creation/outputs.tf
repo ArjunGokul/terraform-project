@@ -5,6 +5,21 @@ output "resource_group_name" {
 output "resource_group_location" {
   value = module.resource_group.location
 }
+
+output "cluster_name" {
+  value = module.aks_cluster.cluster_name
+}
+
+output "kube_config" {
+  value     = module.aks_cluster.kube_config
+  sensitive = true
+}
+
+output "client_certificate" {
+  value     = module.aks_cluster.client_certificate
+  sensitive = true
+}
+
 output "resource_group_id" {
   value = module.resource_group.id
 }
